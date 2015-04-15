@@ -1,0 +1,36 @@
+# app specific settings
+app:
+  destination_queue: testq
+  version: 0.3.0
+
+
+# Spring boot - overriding settings
+spring:
+  activemq:
+    broker-url: tcp://10.28.60.58:61616
+    user: admin
+    password: admin
+    in-memory: true 
+    pooled: false
+  thymeleaf:
+    cache: false
+  
+#overriding embedded server properties
+server:
+  port: 8080
+  context-path: /PlayPen
+
+
+#jenkins detail
+jenkins:
+  api:
+     url: http://10.30.188.80:8777/jenkins/api/xml
+
+#mas specific jenkins jobs
+mas:
+  jobs:
+    prefix: MAS
+   
+security:
+  port: 8443
+---

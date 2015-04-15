@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+ <head>
+    <link rel="stylesheet"
+      th:href="@{/css/bootstrap.min.css}"
+      href="../../css/bootstrap.min.css"/>  
+      
+     <script src="http://code.jquery.com/jquery-latest.js"></script>
+     <script src="../../js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Navbar -->
+	<div class="navbar navbar-inverse" th:fragment="header">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" th:href="@{/playpen.htm}">MAS Playpen</a>
+			</div>
+			
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+						<li th:classappend="${page == 'messages' ? 'active' : ''}"><a href="#" th:href="@{/message}">JMS</a></li>
+						<li th:classappend="${page == 'tasks' ? 'active' : ''}"><a href="#" th:href="@{/springssl}">Spring SSL</a></li>
+						<li th:classappend="${page == 'tasks' ? 'active' : ''}"><a href="#" th:href="@{/jenkins}">MAS Jenkins Project -API</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>	
+	
+ </body>
+</html>
