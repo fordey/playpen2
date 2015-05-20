@@ -18,7 +18,7 @@ import org.springframework.util.FileCopyUtils;
 public class TomcatSSLConfig {
 	private static String CONNECTOR_PROTOCOL = "org.apache.coyote.http11.Http11NioProtocol";
 
-	@Value("${security.port}")
+	@Value("${ssl.port}")
 	String securePort;
 
 	//the below code code defines a bean for a tomcat coyote connector using https, 
