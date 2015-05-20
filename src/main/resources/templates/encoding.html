@@ -42,7 +42,7 @@ layout:decorator="layout">
                 		</div>
                 	</div>
             	   
-  				<form class="form-horizontal-fluid" action="#" th:action="@{/encodeMessage.htm}" th:object="${encodedMessage}" method="post">
+  				<form class="form-horizontal-fluid" action="#" th:action="@{/encode/message.htm}" th:object="${encodedMessage}" method="post">
   					<div class="panel-body-fluid">
   				 		<input th:field="*{rawPassword}" class="textarea-style" required="required"></input>
   				 		<p class="bg-info" th:text=" 'Encoding: ' + ${encodedMessage.encodePassword}"></p>
@@ -53,7 +53,7 @@ layout:decorator="layout">
                     		<button type="submit" class="btn btn-primary" id="submit" style="margin-left: 20px">Encode</button>
                 		</div>
                 		<div class="pull-left">
-                			<a class="btn btn-primary" th:href="@{/clearEncoded.htm}">Clear</a>
+                			<a class="btn btn-primary" th:href="@{/encode/clear.htm}">Clear</a>
                 		</div>
          			</div>
   				</form>

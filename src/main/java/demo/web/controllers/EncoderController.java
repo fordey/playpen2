@@ -1,6 +1,8 @@
 package demo.web.controllers;
 
 import demo.core.domain.EncodedMessage;
+import demo.core.services.api.EncodingService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +23,12 @@ public class EncoderController extends AbstractSiteController {
 	
 	@Autowired
 	private EncodedMessage encodedMessage;
+	
+	@Autowired
+	private EncodingService encodingService;
 
 	
-	@RequestMapping(value ="/encodeMessage",method = RequestMethod.GET)
+	@RequestMapping(value ="/encode/message.htm",method = RequestMethod.GET)
 	public String renderMessageSender(Model model){
 		LOG.debug("Rendering encoder page");
 		
@@ -32,7 +37,7 @@ public class EncoderController extends AbstractSiteController {
 	}
 	
 	
-	@RequestMapping(value="/clearEncoded.htm", method = RequestMethod.GET)
+	@RequestMapping(value="/encode/clear.htm", method = RequestMethod.GET)
 	public String clearMessage(Model model){
 		encodedMessage.setRawPassword("");
 		encodedMessage.setEncodePassword("");
@@ -40,13 +45,13 @@ public class EncoderController extends AbstractSiteController {
 	}
 	
 
-	@RequestMapping(value="/encodeMessage", method = RequestMethod.POST)
+	@RequestMapping(value="/encode/message.htm", method = RequestMethod.POST)
 	public String encodeMessage(@ModelAttribute("encodedMessage")EncodedMessage encodedMessage, BindingResult result){
 		LOG.info(String.format("Message to encode : %s", encodedMessage.getRawPassword()));;
 		
-		String encoding  = "dfdfdfdfdfdf";
-		
-		encodedMessage.setEncodePassword(encoding);
+				
+		encodedMessage.setEncodePassword(
+					encodingService.encodeString(encodedMessage.getRawPassword()));
 		
 		
 		return "encoding";

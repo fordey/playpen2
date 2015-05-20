@@ -35,7 +35,7 @@ public class JMSController extends AbstractSiteController {
 	private SimpleMessageProducer messageProducer;
 
 	
-	@RequestMapping(value ="/message",method = RequestMethod.GET)
+	@RequestMapping(value ="/message/sendMessage.htm",method = RequestMethod.GET)
 	public String renderMessageSender(Model model){
 		LOG.debug("Rendering Message Sender Page");
 		
@@ -44,14 +44,14 @@ public class JMSController extends AbstractSiteController {
 	}
 	
 	
-	@RequestMapping(value="/clear.htm", method = RequestMethod.GET)
+	@RequestMapping(value="/message/clearMessage.htm", method = RequestMethod.GET)
 	public String clearMessage(Model model){
 		message.setPayLoad("");
 		return "message_sender";
 	}
 	
 
-	@RequestMapping(value="/sendMessage.htm", method = RequestMethod.POST)
+	@RequestMapping(value="/message/sendMessage.htm", method = RequestMethod.POST)
 	public ModelAndView sendMessage(@ModelAttribute("message")RequestMessage message, BindingResult result){
 		LOG.info(String.format("Message Payload : %s", message.getPayLoad()));;
 		
@@ -68,7 +68,7 @@ public class JMSController extends AbstractSiteController {
 	}
 	
 	
-	@RequestMapping(value="/getQueueSize", method=RequestMethod.GET)
+	@RequestMapping(value="/message/getQueueSize.htm", method=RequestMethod.GET)
 	public String getQueueSize(Model model){
 		model.addAttribute("queueSize", brokerDetailsService.getQueueSize());
 		

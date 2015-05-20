@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 
 public class EncodedMessage {
 
-	private String rawPassword;
-	private String encodePassword;
+	private String rawPassword = "";
+	private String encodePassword = "";
 	
 	
 	public String getRawPassword() {

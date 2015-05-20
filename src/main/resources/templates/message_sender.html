@@ -38,7 +38,7 @@ layout:decorator="layout">
 		<script>
 		function getQueueSize(){	
 			//var link = /*[[@{/getQueueSize}]]*/;
-			var url = "/PlayPen/getQueueSize";
+			var url = "/PlayPen/message/getQueueSize.htm";
 			$("#queue_fragment").load(url, function(response, status, xhr)
 			{
 				if(status == 'error'){
@@ -71,7 +71,7 @@ layout:decorator="layout">
                 		</div>
                 	</div>
             	   
-  				<form class="form-horizontal-fluid" action="#" th:action="@{/sendMessage.htm}" th:object="${message}" method="post">
+  				<form class="form-horizontal-fluid" action="#" th:action="@{/message/sendMessage.htm}" th:object="${message}" method="post">
   					<div class="panel-body-fluid">
   				 		<textarea th:field="*{payLoad}" class="textarea-style" required="required" rows="10"></textarea>
   					</div>
@@ -81,7 +81,7 @@ layout:decorator="layout">
                     		<button type="submit" class="btn btn-primary" id="submit" style="margin-left: 20px">Send Message</button>
                 		</div>
                 		<div class="pull-left">
-                			<a class="btn btn-primary" th:href="@{/clear.htm}">Clear</a>
+                			<a class="btn btn-primary" th:href="@{/message/clearMessage.htm}">Clear</a>
                 			<a class="btn btn-primary" onclick="getQueueSize()">Refresh Q</a>
                 		</div>
          			</div>
