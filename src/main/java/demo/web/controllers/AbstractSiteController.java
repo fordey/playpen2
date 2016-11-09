@@ -1,6 +1,7 @@
 package demo.web.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -21,6 +22,13 @@ public class AbstractSiteController {
 	@ModelAttribute("version")
 	public String getVersion(){
 		return versionService.getVersionNumber();
+	}
+
+	
+	@ModelAttribute("userName")
+	public String getUserName(){
+		return SecurityContextHolder.getContext().getAuthentication().getName();
+		
 	}
 	
 }

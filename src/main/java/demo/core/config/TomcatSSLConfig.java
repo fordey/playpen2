@@ -14,7 +14,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.util.FileCopyUtils;
 
-@Configuration
+//to do setup ssl
+
+//Configuration
 public class TomcatSSLConfig {
 	private static String CONNECTOR_PROTOCOL = "org.apache.coyote.http11.Http11NioProtocol";
 

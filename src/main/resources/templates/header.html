@@ -3,7 +3,7 @@
  <head>
     <link rel="stylesheet"
       th:href="@{/css/bootstrap.min.css}"
-      href="../../css/bootstrap.min.css"/>  
+      href="../static/css/bootstrap.min.css"/>  
       
      <script src="http://code.jquery.com/jquery-latest.js"></script>
      <script src="../../js/bootstrap.min.js"></script>
@@ -18,7 +18,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#" th:href="@{/playpen.htm}">MAS Playpen</a>
+				<a class="navbar-brand" href="#" th:href="@{/salesMaster.htm}">Sales Master</a>
 			</div>
 			
 			<div class="navbar-collapse collapse">
@@ -27,6 +27,8 @@
 						<li th:classappend="${page == 'tasks' ? 'active' : ''}"><a href="#" th:href="@{/springssl}">Spring SSL</a></li>
 						<li th:classappend="${page == 'tasks' ? 'active' : ''}"><a href="#" th:href="@{/jenkins}">MAS Jenkins Project -API</a></li>
 						<li th:classappend="${page == 'encoding' ? 'active' : ''}"><a href="#" th:href="@{/encode/message.htm}">BCrypPasswordEncoder</a></li>
+						<li th:classappend="${page == 'encoding' ? 'active' : ''}"><a href="#" th:href="@{/asynch}">Spring @Asynch</a></li>
+						<li th:classappend="${page == 'logout' ? 'active' : ''}"><a href="#" th:href="@{/logout}">Logout</a></li>
 				</ul>
 			</div>
 		</div>

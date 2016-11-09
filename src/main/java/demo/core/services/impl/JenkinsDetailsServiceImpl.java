@@ -5,13 +5,13 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
@@ -60,7 +60,7 @@ public class JenkinsDetailsServiceImpl implements JenkinsDetailsService {
 			@Override
 			public boolean apply(JenkinsJob job) {
 				
-				return StringUtils.startsWith(job.getName(), masJobPrefix);
+				return StringUtils.startsWithIgnoreCase(job.getName(), masJobPrefix);
 			}
 		}));
 		

@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS USERS;
+
+CREATE TABLE USERS(email VARCHAR(50) primary key, password VARCHAR(300), role VARCHAR(20));

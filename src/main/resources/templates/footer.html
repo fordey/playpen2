@@ -12,6 +12,8 @@
     
    <div th:fragment="footer">
        
+        <p class="text-info" th:text=" 'Logged In: ' + ${userName}"></p>
+       
        <p class="text-info" th:text=" 'Version: ' + ${version}"></p>
        
        <p class="text-info">

@@ -16,21 +16,21 @@ public class PlayPenController extends AbstractSiteController {
 	
 	@RequestMapping(value="/", method = RequestMethod.GET)
 	public String redirectToHomePage(Model model){
-		logger.debug("redirecting to playpen.htm");
+		logger.info("redirecting to playpen.htm");
 		
 		return sendToHome(model);
 	}
 	
-	@RequestMapping(value="/playpen.htm", method = RequestMethod.GET)
+	@RequestMapping(value="/salesMaster.htm", method = RequestMethod.GET)
 	public String sendToHome(Model model){
-		logger.debug("returnning playpen view");
+		logger.debug("returning playpen view");
 		
-		return "playpen";
+		return "salesHome";
 	}
 	
 	@Override
 	public String setPanelTitle(){
-		return "MAS Playpen";
+		return "Sales Master";
 	}
 	
 	

@@ -14,6 +14,7 @@ public class VersionServiceImpl implements VersionService {
 
 	@Override
 	public String getVersionNumber() {
+		
 		return version;
 	}
 

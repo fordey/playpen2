@@ -3,7 +3,7 @@
 	
 	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
-			<pattern>%n|%d{MM/dd HH:mm:ss.SSS}|%-50thread|%5level|%logger{0}| %msg| %xThrowable</pattern>
+			<pattern>%n|user : %X{userId}| session : %X{sessionId}|datetime :%d{MM/dd HH:mm:ss.SSS}|thread : %-20thread| log level : %5level|logger : %logger{0}|message: %msg| %xThrowable</pattern>
 			<outputPatternAsHeader>true</outputPatternAsHeader>
 		</encoder>
 	</appender>

@@ -1,17 +1,16 @@
 package demo.core.domain;
 
-import lombok.Data;
-
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
+import lombok.Data;
+
+@Data
 @Component
 @Scope(value="session", proxyMode=ScopedProxyMode.TARGET_CLASS)
-@Data
-public class EncodedMessage {
-
-	private String rawPassword = "";
-	private String encodePassword = "";
+public class AsynchSampleObject {
+	private String sampleText;
+	private String threadExecuted;
 	
 }

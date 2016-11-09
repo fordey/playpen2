@@ -5,8 +5,7 @@ layout:decorator="layout">
     <title>Message Sender Example</title>
     <link rel="stylesheet"
       th:href="@{/css/bootstrap.min.css}"
-      href="../../css/bootstrap.min.css"/>
-
+      href="../static/css/bootstrap.min.css"/>
 
     <style type="text/css">
       .bs-example{
@@ -38,7 +37,7 @@ layout:decorator="layout">
 		<script>
 		function getQueueSize(){	
 			//var link = /*[[@{/getQueueSize}]]*/;
-			var url = "/PlayPen/message/getQueueSize.htm";
+			var url = "/salesMaster/message/getQueueSize.htm";
 			$("#queue_fragment").load(url, function(response, status, xhr)
 			{
 				if(status == 'error'){

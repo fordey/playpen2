@@ -22,7 +22,7 @@ import org.springframework.ui.Model;
 @Controller
 public class JMSController extends AbstractSiteController {
 	
-	private static final Logger LOG = LoggerFactory.getLogger("SiteController.class");
+	private static final Logger LOG = LoggerFactory.getLogger(JMSController.class);
 	
 	@Autowired
 	private RequestMessage message;
