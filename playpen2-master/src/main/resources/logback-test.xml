@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+	
+	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%n|user : %X{userId}| session : %X{sessionId}|datetime :%d{MM/dd HH:mm:ss.SSS}|thread : %-20thread| log level : %5level|logger : %logger{0}|message: %msg| %xThrowable</pattern>
+			<outputPatternAsHeader>true</outputPatternAsHeader>
+		</encoder>
+	</appender>
+	
+	<!--root logger level and appenders  -->
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="consoleAppender"/>
+	</root>
+</configuration>

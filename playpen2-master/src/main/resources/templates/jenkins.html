@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+layout:decorator="layout">
+  <head>
+    <title>MAS Playpen  - Project Info</title>
+    <link rel="stylesheet"
+      th:href="@{/css/bootstrap.min.css}"
+      href="../../css/bootstrap.min.css"/>
+  
+   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  
+  	<style type="text/css">
+    .bs-example{
+    	margin: 20px;
+    }
+</style>
+</head>
+
+<body>
+	<div layout:fragment="content">
+    	<div class="row" th:each="job : ${masJobs}">
+    			<div class="col-sm-6">
+    					<p class="text-info" th:text="${job.name}">Panel Will Go Here></p>
+    			</div>	
+    			<div class="col-sm-6">
+                		         		
+                		<img th:src="@{'/img/'+ ${job.buildStatus.statusColor} + '.png'}"/> 
+                		
+                		
+                </div>
+                
+                
+                
+    		
+    	</div>
+  	</div>
+</body>
+</html>

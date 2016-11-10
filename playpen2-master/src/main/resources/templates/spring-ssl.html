@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+layout:decorator="layout">
+  <head>
+    <title>MAS Playpen  - Project Info</title>
+    <link rel="stylesheet"
+      th:href="@{/css/bootstrap.min.css}"
+      href="../../css/bootstrap.min.css"/>
+  
+   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  
+  	<style type="text/css">
+    .bs-example{
+    	margin: 20px;
+    }
+</style>
+</head>
+
+<body>
+	<div layout:fragment="content">
+
+    	<p class="text-info">
+	   To demonstrate how to set up Https in an embedded tomcat container using Spring Boot refer to the class TomcatSSLConfig.java 
+	   
+	   <br></br><br></br>
+	   https://localhost:8443/PlayPen/
+	   <br></br><br></br>
+	   
+	   This code will create a tomcat coyote connector and configure accordingly, a self signed cert has been created and exists on the 
+	   <br></br>classpath for use in the SSL handshake with the client browser. 
+	   
+	   <br></br><br></br>
+	   As this is a self signed cert the browser will complain that the CA is not trusted
+	   this is fine in this case so accept the exception and the cert will be stored in the browser. 
+	   
+	   <br></br><br></br>
+	   Doing the above through code will leave the http port (configured as 8080) active, if similar was to be done by Spring Boot configuration it would replace the <br></br>
+	   http connector with https connector.
+	   
+	   
+	   <br></br><br></br>
+	   
+	  { The version of the spring boot starter pom.xml has also been upgraded to 1.2.3.RELEASE to take advantage some new annotations (mainly @SpringBootApplication.)}  
+	   
+	   
+ 		</p>
+ 		 				
+   		
+  	</div>
+</body>
+</html>
